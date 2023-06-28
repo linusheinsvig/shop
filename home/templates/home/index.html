@@ -2,5 +2,42 @@
 {% load static %}
 
 {% block content %}
-    <h1 class="display-4 text-success">It works!</h1>
+<div class="grid">
+    <div>
+        <img src="{% static 'images/sofie-heinsvig.webp' %}" alt="">
+    </div>
+    <div>
+        <div>
+            <h2>About me</h2>
+            <hr>
+            <br>
+                <p>I'm Sofie Heinsvig and I'm a big beliver in dreams, and trying to change the world into what we wish
+                    it could be.
+                    Now some might call me naive, but I firmly belive the arts is capable of doing just that.
+                    It might just be the art of paint splattering on a canvas,
+                    make believe on a stage and storytelling through the emotion of a photograph,
+                    but then again what is life if not a collection of stories? Of emotions felt?
+                    So what could be more capable of changing the world and our lives if not the stories we tell?
+                    That's what I've chosen to do with my life. Changing the world, or atleast my own, one story at the
+                    time.</p>
+                    <br>
+        </div>
+        <div class="img-grid">
+            <img src="{% static 'images/collage1.webp' %}" alt="">
+            <img src="{% static 'images/collage2.webp' %}" alt="">
+            <img src="{% static 'images/collage3.webp' %}" alt="">
+            <br>
+        </div>
+        <div>
+            <p>I can't remember a time when playing around with paint wasn’t my favorite thing to do.
+                That, playing around, eventually started to turn from doodles on paper,
+                to murals on my bedroom walls and paint splattered canvases everywhere.
+                And now some of those canvases have ended up here, for you to take take a look at!
+                And should any of them happen to catch your eye, then I’m usually easily convinced to part with
+                them.
+                After all that would clear up more wall space in my own home for new artworks to be made!</p>
+                <br>
+        </div>
+    </div>
+</div>
 {% endblock %}
