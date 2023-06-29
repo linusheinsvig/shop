@@ -2,19 +2,20 @@
 {% load static %}
 
 {% block content %}
-<h1>Test</h1>
 
-
+<div class="grid-container">
     {% for product in products %}
+    <div class="product">
         <img src="{{ product.image.url }}" alt="{{ product.name }}">
-    </a>
-    <br>
-    {{ product.name }}
-    <br>
-    {{ product.artist }}
-    <br>
-    {{ product.price }}
-
+        <div class="product-info">
+            <span class="product-name">{{ product.name }}</span>
+            <br>
+            <span class="product-artist">{{ product.artist }}</span>
+            <br>
+            <span class="product-price">{{ product.price }} $</span>
+        </div>
+    </div>
     {% endfor %}
+</div>
 
 {% endblock %}
