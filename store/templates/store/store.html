@@ -2,20 +2,20 @@
 {% load static %}
 
 {% block content %}
-
-<div class="grid-container">
-    {% for product in products %}
-    <div class="product">
-        <img src="{{ product.image.url }}" alt="{{ product.name }}">
-        <div class="product-info">
-            <span class="product-name">{{ product.name }}</span>
-            <br>
-            <span class="product-artist">{{ product.artist }}</span>
-            <br>
-            <span class="product-price">{{ product.price }} $</span>
-        </div>
+    <div class="grid-container">
+        {% for product in products %}
+            <div class="product">
+                <a href="{% url 'product_detail' product.pk %}">
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                </a>
+                <div class="product-info">
+                    <span class="product-name">{{ product.name }}</span>
+                    <br>
+                    <span class="product-artist">{{ product.artist }}</span>
+                    <br>
+                    <span class="product-price">{{ product.price }} $</span>
+                </div>
+            </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-</div>
-
 {% endblock %}
