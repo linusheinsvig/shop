@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-f1k&!t&7v*(59w&t^k9g&08=z@(o9d1&h0ac)q2dyvd+-s&@)=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-linusheinsvig-shop-f1lt5y4eirw.ws-eu101.gitpod.io']
+ALLOWED_HOSTS = ['8000-linusheinsvig-shop-jenwwcdgq9r.ws-eu101.gitpod.io']
 
 
 # Application definition
@@ -150,6 +150,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # Default primary key field type
