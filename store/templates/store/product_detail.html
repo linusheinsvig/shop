@@ -11,4 +11,9 @@
         <p>Category: {{ product.category }}</p>
         <p>Created at: {{ product.created_at }}</p>
     </div>
+    <form method="POST" action="{% url 'add_to_bag' product.id %}">
+        {% csrf_token %}
+        <input type="submit" value="Add to Bag">
+        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+    </form>
 {% endblock %}
