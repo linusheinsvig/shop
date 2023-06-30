@@ -95,6 +95,15 @@ img {
         color: green;
     }
 
+    table {
+        border: 1px solid black;
+        width: 500px;
+    }
+
+    table img {
+        width: 100px;
+    }
+
 @media (max-width: 768px) {
     .grid {
       grid-template-columns: 1fr;
