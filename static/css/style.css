@@ -12,7 +12,9 @@ body {
     color: #151515;
     position: relative;
     font-weight: 900;
-    font-size: 1rem; 
+    font-size: 1rem;
+    width: 90vw;
+    margin-inline: auto; 
 }
 
 
@@ -46,8 +48,6 @@ img {
 .grid {
     margin-top: 2em;
     padding: 1em;
-    margin-inline: auto;
-    width: 90vw;
     display: grid;
     gap: 1em;
     grid-template-columns: 1fr 1.5fr;
@@ -67,7 +67,6 @@ img {
         gap: 2em;
         margin-inline: auto;
         margin-top: 2em;
-        width: 90vw;
     }
 
     .product {
@@ -95,7 +94,30 @@ img {
         color: green;
     }
 
+    .product-detail {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        text-align: center;
+        padding-top: 2em;
+    }
+
+    .product-detail p {
+        padding: 1em;
+    }
+
+    .product-detail img {
+        width: 80%;
+    }
+
+    form input {
+        font-size: 1.3em;
+        padding: 1em;
+        border-radius: 12px;
+        background-color: #98FB98;
+    }
+
     table {
+        margin-inline: auto;
         border: 1px solid black;
         width: 500px;
     }
@@ -124,6 +146,7 @@ img {
 /* footer and social media */
 
 .social-networks {
+    padding: 2em;
     display: flex;
 }
 
