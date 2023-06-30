@@ -11,7 +11,7 @@
             <p>Price: {{ product.price }} $</p>
             <form method="POST" action="{% url 'add_to_bag' product.id %}">
                 {% csrf_token %}
-                <input type="submit" value="Add to Bag">
+                <input type="submit" value="Add to Bag" class="submit-button">
                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
             </form>
         </div>

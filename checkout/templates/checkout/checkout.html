@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+{% if bag_items %}
+<div class="product-detail">
+    <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+        {% csrf_token %}
+        <div class="checkout">
+            <p>Full Name:</p>
+            {{ order_form.full_name }}
+            <p>Email:</p>
+            {{ order_form.email }}
+            <p>Phone Number:</p>
+            {{ order_form.phone_number }}
+            <p>Adress:</p>
+            {{ order_form.street_address }}
+            <p>Town or City:</p>
+            {{ order_form.town_or_city }}
+            <p>Postal Code:</p>
+            {{ order_form.postcode }}
+            <p>Country:</p>
+            {{ order_form.country }}
+            <br>
+            <button id="submit" class="submit-button">Complete Order</button>
+        </div>
+    </form>
+    <table>
+        {% for item in bag_items %}
+        <tr>
+            <td>{{ item.product.name }}</td>
+            <td>{{ item.product.price }}</td>
+            <td><img src="{{ item.product.image.url }}" alt=""></td>
+        </tr>
+        {% endfor %}
+</table>
+</div>
+
+{% else %}
+    <h1>Your bag is empy</h1>
+
+
+{% endif %}
+
+{% endblock %}

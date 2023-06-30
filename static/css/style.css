@@ -101,19 +101,12 @@ img {
         padding-top: 2em;
     }
 
-    .product-detail p {
-        padding: 1em;
-    }
-
     .product-detail img {
-        width: 80%;
+        width: 60%;
     }
 
-    form input {
-        font-size: 1.3em;
-        padding: 1em;
-        border-radius: 12px;
-        background-color: #98FB98;
+    .product-detail p {
+        padding: 0.5em;
     }
 
     table {
@@ -122,9 +115,30 @@ img {
         width: 500px;
     }
 
-    table img {
-        width: 100px;
-    }
+.checkout {
+    
+}
+
+.checkout input {
+    font-size: 1em;
+    padding: 0.5em;
+    width: 30vw;
+}
+
+.submit-button {
+    padding: 1em;
+    font-size: 1em;
+    margin-top: 1em;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.submit-button:hover {
+    background-color: grey;
+}
+
+
+
 
 @media (max-width: 768px) {
     .grid {
@@ -138,6 +152,10 @@ img {
     .grid-container {
     grid-template-columns: 1fr 1fr;
     gap: 1em;
+    }
+
+    .product-detail {
+        grid-template-columns: 1fr;
     }
   }
 
