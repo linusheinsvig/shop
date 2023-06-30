@@ -26,15 +26,23 @@
             <button id="submit" class="submit-button">Complete Order</button>
         </div>
     </form>
-    <table>
+    <div class="bag-items">
         {% for item in bag_items %}
-        <tr>
-            <td>{{ item.product.name }}</td>
-            <td>{{ item.product.price }}</td>
+    <div class="shopping-bag">
+        <div class="bag-info">
+            <td>{{ item.product.name }}
+                <br>
+            {{ item.product.price }}</td>
+            <br>
+            <button id="remove" data-item-id="{{ item.item_id }}" class="remove-item">Remove</button>
+        </div>
+        <div class="bag-image">
             <td><img src="{{ item.product.image.url }}" alt=""></td>
-        </tr>
-        {% endfor %}
-</table>
+        </div>
+    </div>
+    <hr>
+    {% endfor %}
+</div>
 </div>
 
 {% else %}
@@ -43,4 +51,24 @@
 
 {% endif %}
 
+{% endblock %}
+
+{% block postloadjs %}
+{{ blocksuper }}
+<script type="text/javascript">
+    $('.remove-item').click(function(e) {
+    e.preventDefault();
+    var csrfToken = "{{ csrf_token }}";
+    var itemId = $(this).data('item-id');
+    var url = `/bag/remove/${itemId}/`;
+    var data = {
+        'csrfmiddlewaretoken': csrfToken,
+    };
+
+    $.post(url, data)
+    .done(function() {
+        location.reload();
+    });
+});
+</script>
 {% endblock %}

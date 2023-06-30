@@ -19,3 +19,14 @@ def add_to_bag(request, item_id):
     request.session['bag'] = bag
     print(request.session['bag'])
     return redirect(redirect_url)
+
+
+def remove_from_bag(request, item_id):
+    if request.method == 'POST':
+        # Perform the necessary logic to remove the item from the bag using the item_id
+        bag = request.session.get('bag', {})
+        if item_id in bag:
+            del bag[item_id]
+            request.session['bag'] = bag
+
+        return redirect('view_bag')

@@ -109,11 +109,12 @@ img {
         padding: 0.5em;
     }
 
-    table {
-        margin-inline: auto;
-        border: 1px solid black;
-        width: 500px;
-    }
+.shopping-bag {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 0.5em;
+}
 
 .checkout {
     
