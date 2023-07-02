@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-f1k&!t&7v*(59w&t^k9g&08=z@(o9d1&h0ac)q2dyvd+-s&@)=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-linusheinsvig-shop-o6jzgxse3ur.ws-eu101.gitpod.io']
+ALLOWED_HOSTS = ['8000-linusheinsvig-shop-qk7vf9etp2l.ws-eu101.gitpod.io']
 
 
 # Application definition
@@ -156,6 +156,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Stripe
+STRIPE_CURRENCY = 'usd'
+STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 
 
 # Default primary key field type

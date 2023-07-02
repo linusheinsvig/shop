@@ -23,6 +23,8 @@
             <p>Country:</p>
             {{ order_form.country }}
             <br>
+            <p>Card Details</p>
+            <div id="card-element"></div>
             <button id="submit" class="submit-button">Complete Order</button>
         </div>
     </form>
@@ -71,4 +73,10 @@
     });
 });
 </script>
+
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+
+<script src="/static/js/stripe_elements.js"></script>
+
 {% endblock %}
