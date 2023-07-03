@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+{% if bag_items %}
+<div class="product-detail">
+    <h1>Thank you for your order!</h1>
+    <div class="bag-items">
+        {% for item in bag_items %}
+    <div class="shopping-bag">
+        <div class="bag-info">
+            <td>{{ item.product.name }}
+                <br>
+            {{ item.product.price }}</td>
+            <br>
+            <button id="remove" data-item-id="{{ item.item_id }}" class="remove-item">Remove</button>
+        </div>
+        <div class="bag-image">
+            <td><img src="{{ item.product.image.url }}" alt=""></td>
+        </div>
+    </div>
+    <hr>
+    {% endfor %}
+</div>
+</div>
+
+{% else %}
+    <h1>Your bag is empy</h1>
+
+
+{% endif %}
+
+{% endblock %}
+
+{% block postloadjs %}
+{{ blocksuper }}
+<script type="text/javascript">
+    $('.remove-item').click(function(e) {
+    e.preventDefault();
+    var csrfToken = "{{ csrf_token }}";
+    var itemId = $(this).data('item-id');
+    var url = `/bag/remove/${itemId}/`;
+    var data = {
+        'csrfmiddlewaretoken': csrfToken,
+    };
+
+    $.post(url, data)
+    .done(function() {
+        location.reload();
+    });
+});
+</script>
+
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+
+<script src="/static/js/stripe_elements.js"></script>
+
+{% endblock %}
