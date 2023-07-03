@@ -29,9 +29,9 @@ var card = elements.create('card', {style: style});
 card.mount('#card-element');
 
 // Handle form submit
-var form = document.getElementById('payment-form');
+var form = $('#payment-form');
 
-form.addEventListener('submit', function(ev) {
+form.on('submit', function(ev) {
     ev.preventDefault();
     card.update({ 'disabled': true});
     $('#submit-button').prop('disabled', true);
@@ -52,7 +52,7 @@ form.addEventListener('submit', function(ev) {
             $('#submit-button').prop('disabled', false);
         } else {
             if (result.paymentIntent.status === 'succeeded') {
-                form[0].submit();
+                form.submit();
             }
         }
     });
